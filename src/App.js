@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./layouts/Header";
+import Main from "./layouts/Main";
+import Footer from "./layouts/Footer";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({
+    name: "Emre",
+    password: "1234",
+  });
+  const [allUsers, setAllUsers] = useState([]);
+  const [tasks, setTasks] = useState([]);
+
+  const handleLogin = (credentials) => {
+    //login credentials check in allUsers
+    //setLoggedInUser
+  };
+
+  //template
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header user={loggedInUser} />
+      <Main handleLogin={handleLogin} tasks={tasks} allUsers={allUsers} />
+      <Footer />
     </div>
   );
 }
