@@ -21,6 +21,8 @@ Switch
 Route
 NavLink
 Link
+useHistory()
+useParams()
 
 7- react-router-dom’u yükleyeceğiz: - app’imizi browserrouter ile sarmalayacağız. - import { BrowserRouter as Router } from "react-router-dom"; - <Router>
 <App />
