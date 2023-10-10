@@ -1,0 +1,10 @@
+.login-form {
+    width: 20%;
+    min-width: 200px;
+    margin: auto;
+}
+
+#button-center {
+    margin:auto;
+    display: block;
+}
