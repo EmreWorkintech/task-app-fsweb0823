@@ -1,0 +1,31 @@
+.add-task-container {
+    width: 26%;
+    background-color:rgb(250, 181, 78);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.tasklist-area {
+    width: 37%;
+    background-color: bisque;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.tasks-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+    align-items: flex-start;
+}
+
+.assignee-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.assignee-container > div {
+   width: 45%
+}
