@@ -52,11 +52,20 @@ function App() {
     history.push("/login");
   };
 
+  const addTask = (task) => {
+    const newTask = { ...task, id: Date.now() };
+    setTasks([...tasks, newTask]);
+  };
   //template
   return (
     <div className="App">
       <Header user={loggedInUser} handleLogout={handleLogout} />
-      <Main handleLogin={handleLogin} tasks={tasks} allUsers={allUsers} />
+      <Main
+        handleLogin={handleLogin}
+        tasks={tasks}
+        allUsers={allUsers}
+        addTask={addTask}
+      />
       <Footer />
     </div>
   );
