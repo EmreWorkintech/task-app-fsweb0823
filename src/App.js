@@ -56,6 +56,18 @@ function App() {
     const newTask = { ...task, id: Date.now() };
     setTasks([...tasks, newTask]);
   };
+
+  const changeTaskStatus = (task, status) => {
+    const updatedTasks = tasks.map((item) => {
+      if (item.id === task.id) {
+        item.status = status;
+      }
+      return item;
+    });
+
+    setTasks(updatedTasks);
+  };
+
   //template
   return (
     <div className="App">
@@ -65,6 +77,7 @@ function App() {
         tasks={tasks}
         allUsers={allUsers}
         addTask={addTask}
+        changeTaskStatus={changeTaskStatus}
       />
       <Footer />
     </div>

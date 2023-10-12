@@ -10,6 +10,8 @@ import {
 import { fullName } from "../utils/util";
 import * as Yup from "yup";
 
+import "./AddTask.css";
+
 const d = new Date();
 
 const initialTaskValues = {
@@ -41,6 +43,7 @@ const AddTask = (props) => {
     description: Yup.string()
       .min(10, "Lütfen task'i açıklayınız.")
       .required("Açıklama alanı gereklidir!"),
+    deadline: Yup.string(),
     assignees: Yup.array()
       .min(1, "Lütfen görevi en az bir kişiye atayınız.")
       .max(5, "Bir görevi 5 kişiden fazlaya atayamazsınız!"),
@@ -93,7 +96,8 @@ const AddTask = (props) => {
             name="subject"
             placeholder="Task başlığı"
             type="text"
-            valid={errors.subject ? false : true}
+            //valid={errors.subject ? false : true}
+            data-cy="subject-input"
             value={taskForm.subject}
             onChange={handleChange}
           />
@@ -108,7 +112,8 @@ const AddTask = (props) => {
             name="description"
             placeholder="Task detayları"
             type="textarea"
-            valid={errors.description ? false : true}
+            data-cy="description-input"
+            //valid={errors.description ? false : true}
             value={taskForm.description}
             onChange={handleChange}
           />
@@ -125,6 +130,7 @@ const AddTask = (props) => {
             id="deadline"
             name="deadline"
             type="date"
+            data-cy="deadline-input"
             value={taskForm.deadline}
             onChange={handleChange}
           />

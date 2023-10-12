@@ -5,7 +5,7 @@ import Tasks from "../pages/Tasks";
 import UserPage from "../pages/UserPage";
 
 const Main = (props) => {
-  const { allUsers, handleLogin, addTask, tasks } = props;
+  const { allUsers, handleLogin, addTask, tasks, changeTaskStatus } = props;
 
   return (
     <div className="main-container">
@@ -18,7 +18,12 @@ const Main = (props) => {
         <Route path="/tasks">
           {" "}
           {/* emre.com/tasks/1/add -> girer  emre.com/add/tasks -> girmez!!!*/}
-          <Tasks allUsers={allUsers} addTask={addTask} tasks={tasks} />
+          <Tasks
+            allUsers={allUsers}
+            addTask={addTask}
+            tasks={tasks}
+            changeTaskStatus={changeTaskStatus}
+          />
         </Route>
         <Route exact path="/users">
           <UserList allUsers={allUsers} />

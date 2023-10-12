@@ -32,6 +32,7 @@ const Login = (props) => {
             name="email"
             placeholder="Kayıtlı email adresiniz"
             type="email"
+            data-cy="email-input"
             value={loginFormState.email}
             onChange={handleChange}
           />
@@ -43,6 +44,7 @@ const Login = (props) => {
             name="password"
             placeholder="Şifreniz"
             type="password"
+            data-cy="password-input"
             value={loginFormState.password}
             onChange={handleChange}
           />
