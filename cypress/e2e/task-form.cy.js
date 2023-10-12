@@ -136,7 +136,7 @@ describe("ADD TASK", () => {
     cy.get("[name='Tobias Funke'").check();
     cy.contains("Save").click();
 
-    cy.contains("Complete").first().click();
+    cy.get("[data-cy=status-button]").eq(1).click();
     //Assert
 
     cy.get("[data-cy=completed-task]").should("have.length", 1);
